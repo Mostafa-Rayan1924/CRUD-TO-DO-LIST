@@ -82,3 +82,9 @@ mainBtn.addEventListener("click", () => {
 // end main btn to create task
 
 document.querySelector(".dont").innerHTML = mainAarray.length;
+// clear input
+function clear() {
+  addressInp.value = "";
+  date.value = "";
+}
+// end of clear
