@@ -88,3 +88,14 @@ function clear() {
   date.value = "";
 }
 // end of clear
+
+// delete item
+function deleteItem(i) {
+  let confirmmsg = confirm(`  هل انت متاكد من حذف ${mainAarray[i].title}`);
+  if (confirmmsg) {
+    mainAarray.splice(i, 1);
+    showData();
+    setstorage();
+  }
+}
+// end of del
