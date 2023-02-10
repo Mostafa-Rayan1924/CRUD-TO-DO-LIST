@@ -122,3 +122,15 @@ function doned() {
   return (document.querySelector(".don").innerHTML = filter.length);
 }
 // end of complete
+
+function acceptItem(i) {
+  let endTask = mainAarray[i];
+  if (mainAarray[i].isDone) {
+    endTask.isDone = false;
+  } else {
+    endTask.isDone = true;
+  }
+  showData();
+  setstorage();
+}
+// end of complete
