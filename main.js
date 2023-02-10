@@ -99,3 +99,17 @@ function deleteItem(i) {
   }
 }
 // end of del
+// edit item
+function editItem(i) {
+  overlay.classList.add("d-block");
+  sending.classList.add("d-block");
+  addressInp.value = mainAarray[i].title;
+  date.value = mainAarray[i].dating;
+  let edittask = mainAarray[i];
+  edittask.title = addressInp.value;
+  edittask.dating = date.value;
+  mainAarray.splice(i - 1, 1);
+  showData();
+  setstorage();
+}
+// end of edit item
