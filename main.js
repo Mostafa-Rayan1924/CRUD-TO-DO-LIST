@@ -113,3 +113,12 @@ function editItem(i) {
   setstorage();
 }
 // end of edit item
+// complete
+function doned() {
+  let filter = mainAarray.filter((item) => {
+    return item.isDone == true;
+  });
+  setstorage();
+  return (document.querySelector(".don").innerHTML = filter.length);
+}
+// end of complete
