@@ -1,0 +1,243 @@
+:root{--main-color:#00bcd4;}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;}
+body{
+    direction: rtl;
+    background-color: #9e9e9e;
+    font-family: 'Noto Naskh Arabic', serif;
+    display: flex;
+    justify-content: center;}
+.container{
+   margin-top: 70px;
+    width: 70%;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.container .tasks{
+    padding: 20px 10px;
+    background-color:#e5e1e1 ;
+}
+.container .head{
+    display: flex;
+    align-items: center;
+    background: var(--main-color);
+    padding: 15px;
+}
+.container h2{
+color: white;
+margin: 0px auto;
+}
+.container button{
+    border: none;
+    background: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 23px;
+    color: var(--main-color);
+    cursor: pointer;
+}
+.container .task{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    margin: 14px 10px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ddd;
+    border: 2px solid transparent;
+    transition: 0.3s;
+}
+.container .task:hover{
+    border: 2px solid var(--main-color);
+}
+.container h3{
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+.container .history{
+    margin-right: 5px;
+    color: #777;
+}
+.container span i{
+    color: #777;
+}
+.container .icons{
+    display: flex;
+    align-items: center;
+}
+.container .icons .del,
+.container .icons .ok,
+.container .icons .edit{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    color: white;
+    display: grid;
+    place-items: center;
+    font-size: 14px;
+    margin: 0px 10px;
+    cursor: pointer;
+}
+.container .icons .del{
+background-color: crimson;
+}
+.container .icons .ok{
+background-color: rgb(29, 227, 98);
+}
+.container .icons .edit{
+background-color: var(--main-color);
+}
+@media (max-width:767px) {
+    .container .task{
+    flex-direction: column;
+    justify-content: center;
+    }
+    .container .task h3{
+        margin-bottom: 10px;
+        width: 100%;
+    }
+    .container .task .icons{
+        margin: 10px 0px;
+    }
+}
+.span{
+    position: fixed;
+    border-radius: 50%;
+    opacity: 0.8;
+}
+.s1{
+    width: 30px;
+    height: 30px;
+   top: 100px;
+   left: 60px;
+    background-color: rgb(204, 51, 163);
+    animation: move 3s linear infinite;
+}
+
+ .s2{
+    width: 36px;
+    height: 36px;
+    top: 200px;
+    right: 40px;
+     background-color: #198754;
+ } .s3{
+    width: 45px;
+    height: 45px;
+    bottom: 0px;
+    left: 50px;
+     background-color:#084298;
+ } .s4{
+    width: 20px;
+    height: 20px;
+    bottom: 100px;
+    right: 60px;
+     background-color: #530dfd;
+    animation: moves 2s linear infinite;
+ }
+ @keyframes move {
+    0%, 100%{
+     opacity: 0.4;
+    }
+    50%{
+   opacity: 1;
+    }
+ }
+ @keyframes moves {
+    0%, 100%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateX(-40px);
+    }
+}
+.sending{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #d9d9d9f1;
+    z-index: 1000;
+    padding: 20px;
+    width: 50%;
+    border-radius: 10px;
+    text-align: center;
+ display: none;
+ transition: 0.3s;
+}
+@media (max-width:767px) {
+    .sending{
+        width: 100%;
+    }
+}
+.sending input{
+    display: block;
+    margin: 10px auto;
+    width: 60%;
+    border: none;
+    height: 30px;
+    border-radius: 10px;
+    caret-color: var(--main-color);
+    padding: 0px 15px;
+    outline: none;
+    border: 1px solid transparent;
+}
+.sending input:focus{
+    border: 1px solid var(--main-color);
+}
+.sending button{
+    margin: 10px 0px;
+    background: var(--main-color);
+    border: none;
+    color: white;
+    padding: 8px 30px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.sending button:hover{
+padding: 8px 35px;
+box-shadow: 0 0 10px var(--main-color);
+}
+
+.sending label{
+    font-size: 20px;
+    font-weight: 500;
+}
+.overlay{
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(.15, .15, .15, 0.5);
+    backdrop-filter: blur(17px);
+    z-index: 999;
+    display: none;
+}
+.d-block{
+    display: block;
+}
+.task.done{
+    background-color: #60edab;
+    color: white;
+}
+.misson{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.misson .mainh4{
+    font-size: 18px;
+    margin: 0px 0px 0px 10px;
+}
+.misson h4 span{
+    color: var(--main-color);
+}
