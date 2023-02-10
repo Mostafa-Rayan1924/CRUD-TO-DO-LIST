@@ -63,3 +63,22 @@ function showData() {
 }
 showData();
 // end of data
+// main btn to create task
+mainBtn.addEventListener("click", () => {
+  let newObj = {
+    title: addressInp.value,
+    dating: date.value,
+    isDone: false,
+  };
+  if (addressInp.value != "" && date.value != "") {
+    mainAarray.push(newObj);
+  }
+  setstorage();
+  showData();
+  clear();
+  overlay.classList.remove("d-block");
+  sending.classList.remove("d-block");
+});
+// end main btn to create task
+
+document.querySelector(".dont").innerHTML = mainAarray.length;
