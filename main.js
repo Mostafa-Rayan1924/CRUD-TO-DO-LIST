@@ -7,7 +7,8 @@ let mainBtn = document.querySelector(".main-btn");
 let sending = document.querySelector(".sending");
 let date = document.querySelector(".date");
 let addressInp = document.querySelector(".addressInp");
-
+let mood = "create";
+let ind;
 // main array
 if (localStorage.getItem("tasks") !== null) {
   mainAarray = JSON.parse(localStorage.getItem("tasks"));
@@ -70,8 +71,12 @@ mainBtn.addEventListener("click", () => {
     dating: date.value,
     isDone: false,
   };
-  if (addressInp.value != "" && date.value != "") {
-    mainAarray.push(newObj);
+  if (mood == "create") {
+    if (addressInp.value != "" && date.value != "") {
+      mainAarray.push(newObj);
+    }
+  } else {
+    mainAarray[ind] = newObj;
   }
   setstorage();
   showData();
@@ -105,10 +110,8 @@ function editItem(i) {
   sending.classList.add("d-block");
   addressInp.value = mainAarray[i].title;
   date.value = mainAarray[i].dating;
-  let edittask = mainAarray[i];
-  edittask.title = addressInp.value;
-  edittask.dating = date.value;
-  mainAarray.splice(i - 1, 1);
+  mood = "update";
+  ind = i;
   showData();
   setstorage();
 }
