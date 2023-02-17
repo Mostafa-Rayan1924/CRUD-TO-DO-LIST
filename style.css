@@ -241,3 +241,18 @@ box-shadow: 0 0 10px var(--main-color);
 .misson h4 span{
     color: var(--main-color);
 }
+#search{
+    width: 90%;
+    margin: 10px auto;
+    display: block;
+    border: none;
+    background: #e9e9df;
+    height: 30px;
+    outline: 1px solid transparent;
+
+    border-radius: 6px;
+    padding: 0px 20px 0px 20px;
+}
+#search:focus{
+    outline: 1px solid var(--main-color);
+}

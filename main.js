@@ -137,3 +137,39 @@ function acceptItem(i) {
   setstorage();
 }
 // end of complete
+
+function searchData(value) {
+  let result = "";
+  let i = 0;
+  mainAarray.map((item) => {
+    if (item.title.includes(value)) {
+      result += `    <div class="task ${mainAarray[i].isDone ? "done" : ""}">
+      <div class="info">
+          <h3>${item.title}</h3>
+          <span><i class="fas fa-user"></i></span>
+          <span class="history">${item.dating}</span>
+      </div>
+      <div class="icons">
+      <div onclick="deleteItem(${i})" class="del">
+          <i class="fa-solid fa-trash"></i>
+      </div>
+      ${
+        mainAarray[i].isDone
+          ? `    <div onclick="acceptItem(${i})" class="ok">
+      <i class="fas fa-times"></i>
+  </div>`
+          : `    <div onclick="acceptItem(${i})" class="ok">
+          <i class="fa-solid fa-check"></i>
+          </div>`
+      }
+      <div onclick="editItem(${i})" class="edit">
+          <i class="fa-solid fa-pen"></i>
+      </div>
+      </div>
+  </div>
+  `;
+      i++;
+    }
+    document.querySelector(".tasks").innerHTML = result;
+  });
+}
